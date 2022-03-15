@@ -1,0 +1,4 @@
+#!/bin/bash
+while read F  ; do
+        touch $F
+done < filelist.txt
