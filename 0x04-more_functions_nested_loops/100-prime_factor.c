@@ -1,22 +1,25 @@
-#include "main.h"
 #include <stdio.h>
+
 /**
- * prime_factor 
- * @n: number
- * Return: void
+ * main - print largest prime factor 
+ * Return: 0 on success
  */
-void prime_factor(int n)
+
+int main(void)
 {
-	if (n > 0)
+	unsigned long num = 612852475143;
+	unsigned long divisor = 2;
+
+	while (divisor < num)
 	{
-		prime_factor(n / 10);
-		_putchar((n % 10) + '0');
+		if (num % divisor == 0)
+		{
+			num /= divisor;
+			divisor = 2;
+		}
+		else
+			divisor++;
 	}
-	else if (n < 0)
-	{
-		_putchar('-');
-		n = -1 * n;
-		prime_factor(n / 10);
-		_putchar((n % 10) + '0');
-	}
+	printf("%lu\n", num);
+	return (0);
 }
