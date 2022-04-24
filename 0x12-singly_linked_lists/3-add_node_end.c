@@ -23,17 +23,21 @@ int _strlen(const char *str)
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new_node, *tmp; /* create new node */
-
-	if (str == NULL) /* validate input */
-		return (NULL);
-	if (strdup(str) == NULL) /* check if malloc errored */
-		return (NULL);
+	char *dup;
 
 	new_node = malloc(sizeof(list_t)); /* malloc for new node */
 	if (new_node == NULL)
 		return (NULL);
 
-	new_node->str = strdup(str); /* set node values */
+	dup = strdup(str);
+	if (str == NULL)
+	{
+		free(new_node);
+		return (NULL);
+	}
+
+
+	new_node->str = dup; /* set node values */
 	new_node->len = _strlen(str);
 	new_node->next = NULL;
 
