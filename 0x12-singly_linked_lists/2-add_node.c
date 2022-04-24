@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "lists.h"
 
 /**
@@ -25,13 +25,14 @@ int _strlen(const char *str)
 
 list_t *add_node(list_t **head, const char *str)
 {
+	/* 1. allocate node */
+	list_t *new_node;
 
 	if (str == NULL)
 		return (NULL);
 	if (strdup(str) == NULL) /*check if strdup malloc errored */
 		return (NULL);
-	/* 1. allocate node */
-	list_t *new_node;
+	
 
 	new_node = malloc(sizeof(list_t));
 
