@@ -27,7 +27,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 
 		while (tmp->next != NULL) /* iterate till last node */
 			tmp = tmp->next;
-		tmp->next = x; /* link last node to new node */
+		tmp->next = new_node; /* link last node to new node */
 	}
 
 	return (new_node);
