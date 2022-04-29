@@ -16,7 +16,10 @@ unsigned int binary_to_uint(const char *b)
 		else if (*b == '0')
 			sum <<= 1;
 		else
+		{
+			sum = 0;
 			break;
+		}
 	}
 	return (sum);
 }
