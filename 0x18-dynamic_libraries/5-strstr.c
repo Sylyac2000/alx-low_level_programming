@@ -1,5 +1,4 @@
 #include "main.h"
-#define NULL 0
 
 /**
  * _strstr - locate and return pointer to first occurence of substring
@@ -18,7 +17,7 @@ char *_strstr(char *haystack, char *needle)
 	while (haystack[i] != '\0') /* iterate through haystack */
 	{
 		/* if a byte matches first char of needle */
-		/* interate through needle until match ends */
+		/* iterate through needle until match ends */
 		if (haystack[i] == needle[0])
 		{
 			x = i, j = 0;
@@ -36,5 +35,5 @@ char *_strstr(char *haystack, char *needle)
 		}
 		i++;
 	}
-	return (NULL); /* No match */
+	return (0); /* No match */
 }
