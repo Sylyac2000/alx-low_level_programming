@@ -6,7 +6,6 @@
 * @array: Pointer to integer
 * @left: starting index of the [sub]array to search.
 * @right: ending index of the [sub]array to search.
-* @size: length of array
 * @value: value to search
 *
 * Return: -1 if not find or array null, otherwise index of element founded
